@@ -1,0 +1,96 @@
+/* DeepShield 主题样式 */
+
+:root {
+  --primary-color: #00D4FF;
+  --secondary-color: #00FF88;
+  --accent-color: #8b5cf6;
+  --bg-dark: #0a0e1a;
+  --bg-darker: #060c18;
+  --sidebar-bg: #111827;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: rgba(148, 163, 184, 0.2);
+}
+
+/* Element Plus 主题覆盖 */
+.el-button--primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #06b6d4 50%, #0891b2 100%) !important;
+  border: none !important;
+}
+
+.el-button--primary:hover {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%) !important;
+}
+
+.el-menu-item.is-active {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.15), transparent) !important;
+  color: var(--primary-color) !important;
+}
+
+.el-menu-item.is-active::before {
+  background: var(--primary-color);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sidebar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* 渐变文本 */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 卡片效果 */
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* 动画 */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+.rotate-animation {
+  animation: rotate 2s linear infinite;
+}
