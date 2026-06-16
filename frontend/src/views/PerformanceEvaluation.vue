@@ -85,6 +85,7 @@
 
 <script>
 import * as echarts from 'echarts'
+import { apiRequest } from '../api/config'
 
 export default {
   name: 'PerformanceEvaluation',
@@ -137,10 +138,10 @@ export default {
       this.crossModalLoading = true
       try {
         const [rocRes, robRes, cmRes, spRes] = await Promise.all([
-          fetch('/api/benchmark/roc').then(r => r.json()),
-          fetch('/api/benchmark/robustness').then(r => r.json()),
-          fetch('/api/benchmark/cross-modal').then(r => r.json()),
-          fetch('/api/benchmark/speed').then(r => r.json())
+          apiRequest('/benchmark/roc'),
+          apiRequest('/benchmark/robustness'),
+          apiRequest('/benchmark/cross-modal'),
+          apiRequest('/benchmark/speed')
         ])
         if (rocRes.success) { this.rocData = rocRes.curves; this.$nextTick(() => this.initROCChart()) }
         if (robRes.success) { this.robustnessData = robRes; this.$nextTick(() => this.initRobustnessChart()) }

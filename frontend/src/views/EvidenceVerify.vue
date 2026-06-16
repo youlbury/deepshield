@@ -356,6 +356,7 @@
 </template>
 
 <script>
+import { apiRequest } from '../api/config'
 export default {
   name: 'EvidenceVerify',
   data() {
@@ -423,11 +424,8 @@ export default {
       }
       
       try {
-        const res = await fetch('/api/evidence/verify', {
+        const res = await apiRequest('/evidence/verify', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
           body: JSON.stringify({
             evidence_id: this.evidenceId,
             file_hash: this.fileHash || undefined,
@@ -468,11 +466,10 @@ export default {
       const formData = new FormData()
       formData.append('file', file)
       
-      fetch('/api/evidence/calculate_hash', {
+      apiRequest('/evidence/calculate_hash', {
         method: 'POST',
         body: formData
       })
-      .then(res => res.json())
       .then(data => {
         if (data.success) {
           this.fileHash = data.file_hash
@@ -487,8 +484,7 @@ export default {
     },
     
     viewAllEvidence() {
-      fetch('/api/evidence/list')
-        .then(res => res.json())
+      apiRequest('/evidence/list')
         .then(data => {
           if (data.success) {
             this.showEvidenceListDialog = true
