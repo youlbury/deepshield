@@ -1,1 +1,20 @@
+# Flask 核心框架
+Flask==3.0.2
+flask-cors==6.0.5
+Flask-JWT-Extended==4.6.0
+Flask-SQLAlchemy==3.1.1
+gunicorn==26.0.0
 
+# AI/ML 库
+librosa==0.11.0
+opencv-python==4.13.0.92
+numpy>=1.26.0
+pandas>=2.0.0
+pillow==11.3.0
+
+# 报告生成
+reportlab==4.5.1
+
+# 其他依赖
+python-dotenv==1.0.1
+requests>=2.31.0
