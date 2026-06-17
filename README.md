@@ -1,11 +1,5 @@
 # DeepShield - 多模态深度伪造检测与数字取证平台
 
-## 🏆 项目定位
-
-**DeepShield** 是一个面向 AI 生成内容的多模态内容安全检测与数字取证平台，专为 **挑战杯/网络安全赛道** 设计。本系统参考学术界和工业界认可的 SOTA 模型、权威数据集和 Benchmark，具备强大的说服力和技术深度。
-
----
-
 ## 📊 核心技术路线
 
 ### 一、图片检测 (Image Detection)
@@ -123,43 +117,6 @@
 
 ---
 
-## 🎯 挑战杯推荐组合方案
-
-### 方案一：基础版（最容易实现）
-```
-图片检测: Xception + F3Net
-视频检测: EfficientNet + LSTM
-音频检测: AASIST
-数据集: FaceForensics++ + ASVspoof 2021 + FakeAVCeleb
-特色功能: 热力图可解释检测 + 数字取证报告 + SHA256 证据链
-难度: ★★★☆☆
-影响力: ★★★★☆
-```
-
-### 方案二：进阶版（全面覆盖）
-```
-图片检测: Xception + EfficientNet-B4 + F3Net
-视频检测: EfficientNet + LSTM + TimeSformer
-音频检测: AASIST + Wav2Vec 2.0
-数据集: FaceForensics++ + DFDC + Celeb-DF + ASVspoof 2021 + FakeAVCeleb
-特色功能: 多模态融合 + 模型对比实验 + 风险趋势分析
-难度: ★★★★☆
-影响力: ★★★★★
-```
-
-### 方案三：学术研究版（最前沿）
-```
-图片检测: HiFi-Net + F3Net + CNND
-视频检测: TimeSformer + I3D
-音频检测: AASIST + Whisper Encoder
-数据集: Celeb-DF++ + DFDC + ASVspoof 2021 + WaveFake + FakeAVCeleb
-特色功能: 频域分析 + 时空 Transformer + 自监督学习
-难度: ★★★★★
-影响力: ★★★★★
-```
-
----
-
 ## 🔧 当前项目状态
 
 ### 已完成功能
@@ -185,46 +142,10 @@
 - 🔄 风险趋势可视化图表
 - 🔄 模型对比实验模块
 
----
-
-## 🚀 快速启动
-
 ### 前置要求
 - Python 3.8+
 - Node.js 16+
 - Anaconda（推荐）
-
-### 安装步骤
-
-1. **安装前端依赖**
-```bash
-cd frontend
-npm install
-```
-
-2. **初始化数据库**
-```bash
-python init_db.py
-```
-
-3. **启动后端（端口 5001）**
-```bash
-python app.py
-```
-
-4. **启动前端（端口 5473）**
-```bash
-cd frontend
-npm run dev
-```
-
-5. **访问系统**
-- 本机: http://localhost:5473
-
-
----
-
-## 📖 申报书撰写建议
 
 ### 创新点提炼
 1. **多模态融合检测** - 同时支持图像、视频、音频三种模态，覆盖主流 DeepFake 攻击场景
